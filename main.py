@@ -139,8 +139,6 @@ class Frame_right_top(tk.Frame):
         #################################
 
         buttons_setup = [('load files',             manager.load_file,                          2, 2),
-                         ('reload classes',         manager.reload_classes,                     0, 5),
-                         ('count drawing times',    manager.count_drawing_times,                1, 5),
                          ('make clip',              manager.make_video_clip,                    0, 7),
                          ('save frame as jpg',      manager.save_frame,                         1, 7),
                          ('frame count -',          lambda: manager.frame_cnt_change(-1),       1, 9),
@@ -153,7 +151,9 @@ class Frame_right_top(tk.Frame):
                          ('bike rotation -5',       lambda : manager.bike_rotation_change(-5),  1, 14),
                          ('bike rotation -10',      lambda : manager.bike_rotation_change(-10), 2, 14),
                          ('image rotation +1',      lambda : manager.img_rotation_change(1),    1, 19),
-                         ('image rotation -1',      lambda : manager.img_rotation_change(-1),   2, 19)]
+                         ('image rotation -1',      lambda : manager.img_rotation_change(-1),   2, 19),
+                         ('reload classes',         manager.reload_classes,                     1, 21),
+                         ('count drawing times',    manager.count_drawing_times,                2, 21)]
 
         for text, command, row, column in buttons_setup:
             ttk.Button(self,
@@ -177,9 +177,9 @@ class Frame_right_top(tk.Frame):
         
         for  clip, combobox,  textvariable, postcommand, row, column  in comboboxes_setups:
             tmp = ttk.Combobox(self,
-                                    width=15,
-                                    textvariable=textvariable,
-                                    postcommand=postcommand)
+                               width=15,
+                               textvariable=textvariable,
+                               postcommand=postcommand)
             tmp.grid(row=row, 
                      column=column, 
                      padx=5, 
@@ -191,8 +191,8 @@ class Frame_right_top(tk.Frame):
             
         #################################
                 
-        labels_setup = [('speed factor :',      0, 16),
-                        ('obstacle length :',   1, 16)]
+        labels_setup = [('speed factor :',      1, 16),
+                        ('obstacle length :',   2, 16)]
         
         for text, row, column in labels_setup:
             ttk.Label(self,

@@ -97,7 +97,7 @@ class Manager:
     def count_drawing_times(self):
 
         self.frame_cnt_change(1)
-        self.clip_a.draw_times_table_in_terminal()
+        self.clip_a.clip.draw_times_table_in_terminal()
 
     def load_file(self):
 
@@ -153,8 +153,8 @@ class Manager:
         self.scale.set(self.frame_to_display)  # po co to? do kontroli
 
     def set_ang(self):
-        self.clip_a.bike_ang_cor.append((self.frame_to_display,
-                                          self.clip_a.frames[self.frame_to_display].bike_rotation))
+        self.clip_a.clip.bike_ang_cor.append((self.frame_to_display,
+                                          self.clip_a.clip.frames[self.frame_to_display].bike_rotation))
 
     def save_frame(self):
         self.clip_a.clip.save_frame(self.frame_to_display)
